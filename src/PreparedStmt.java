@@ -15,7 +15,7 @@ public class PreparedStmt {
 			// used to link with the database...
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Students","root","@Farhad02");
 //			PreparedStatement pstmt =   con.prepareStatement("insert into employees(id,name) values(?,?)");
-				PreparedStatement pstmt =   con.prepareStatement("select * from information");
+				PreparedStatement pstmt =   con.prepareStatement("select * from woj");
 				//select * from information;
 		)
 		{
@@ -29,7 +29,7 @@ public class PreparedStmt {
 			ResultSetMetaData rsmd = rs.getMetaData();
 			System.out.println("Total columns "+rsmd.getColumnCount());
 			System.out.println("Ist Column name :"+rsmd.getColumnName(1));
-			System.out.println("Ist column type name"+rsmd.getColumnType(1));
+			System.out.println("Ist column type name "+rsmd.getColumnType(1));
 			
 
 			

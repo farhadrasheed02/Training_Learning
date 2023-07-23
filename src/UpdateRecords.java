@@ -17,9 +17,10 @@ public class UpdateRecords {
 			
 		)
 		{
-			int CountRecords = stmt.executeUpdate("update employees set age = age+10 where id = 11");
+//			int CountRecords = stmt.executeUpdate("update woj set salary = salary+20000 where id = 1");
+			int CountRecords = stmt.executeUpdate("update woj set email = 'abc@gmail.com' where id = 1");
 			System.out.println(CountRecords+" record(s) affectes");
-			ResultSet rs = stmt.executeQuery("select * from employees where id=11");
+			ResultSet rs = stmt.executeQuery("select * from woj where id=1");
 			
 			
 			while(rs.next()) // always give bolean....
@@ -28,7 +29,9 @@ public class UpdateRecords {
 				System.out.print("\t");
 				System.out.print(rs.getString("name"));
 				System.out.print("\t");
-				System.out.print(rs.getInt("age"));
+				System.out.print(rs.getString("email"));
+				System.out.print("\t");
+				System.out.print(rs.getDouble("salary"));
 				System.out.print("\t");
 				System.out.println("");
 			}
