@@ -23,7 +23,7 @@ public class UpdateRecords {
 			ResultSet rs = stmt.executeQuery("select * from woj where id=1");
 			
 			
-			while(rs.next()) // always give bolean....
+			while(rs.next()) // always give boolean....
 			{
 				System.out.print(rs.getString("id"));
 				System.out.print("\t");

@@ -9,18 +9,24 @@ import java.util.Scanner;
 public class FetchRecord {
 	static String user_name;     //"root";
 	static String password;  //"@Farhad02";
+	static String url="jdbc:mysql://localhost:3306/Students";
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter database username: ");
+         user_name = scanner.next();
+
+        System.out.println("Enter database password: ");
+         password = scanner.next();
+
+//         url = "jdbc:mysql://localhost:3306/Students";
 		
-//		System.out.println("Enter the creditionals for the Database :-");
-//		Scanner sc = new Scanner(System.in);
-//		user_name=sc.toString();
-//		password=sc.toString();
+		
 		try
 		(
 			// connections statements 
 			// used to link with the database...  JDBC (java database connectivity)
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Students","root","@Farhad02");
+			Connection con = DriverManager.getConnection(url, user_name, password);
 			Statement stmt =   con.createStatement();
 			
 		)
@@ -44,7 +50,7 @@ public class FetchRecord {
 		catch(SQLException e)
 		{
 			
-			System.out.println("error in retrival"+e);
+			System.out.println("error in retrival"+e.getMessage());
 			
 		}
 		// close the connections...
