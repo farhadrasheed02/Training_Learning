@@ -55,7 +55,7 @@ public class FetchRecord {
 			
 		}
 		// close the connections...
-//		sc.close();
+		scanner.close();
 	}
 
 }
